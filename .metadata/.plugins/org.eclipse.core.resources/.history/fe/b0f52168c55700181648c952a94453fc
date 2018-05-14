@@ -1,0 +1,11 @@
+package upei.api;
+
+import org.simpleframework.http.Request;
+import org.simpleframework.http.Response;
+
+public class SprintsAPI {
+	
+	public static void obterUltimaSprintAtiva(Request request, Response response) {
+		
+	}
+}

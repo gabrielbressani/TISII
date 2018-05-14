@@ -1,0 +1,23 @@
+package upei.api;
+
+import java.io.PrintStream;
+
+import com.google.gson.Gson;
+
+public class BaseAPI {
+
+	protected void ReturnJson(Object object){
+		try {
+			Gson gson = new Gson();
+			String json = gson.toJson(object);
+
+			PrintStream body = response.getPrintStream();
+			
+			response.setValue("Content-Type", "application/json");
+			body.println(json);
+			body.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

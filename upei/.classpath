@@ -7,5 +7,6 @@
 	<classpathentry kind="lib" path="/home/gabrielbressani/Desktop/external/simple/simple-http-6.0.1.jar"/>
 	<classpathentry kind="lib" path="/home/gabrielbressani/Desktop/external/simple/simple-transport-6.0.1.jar"/>
 	<classpathentry kind="lib" path="/home/gabrielbressani/Desktop/external/simple/simple-xml-2.7.1.jar"/>
+	<classpathentry kind="lib" path="/home/gabrielbressani/Desktop/external/gson-2.8.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

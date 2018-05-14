@@ -1,0 +1,20 @@
+package upei.webserver;
+
+public class RunServer {
+
+	public static void main(String[] args) throws Exception {
+		Server server = new Server();
+
+		try {
+			server.openConnection(8080);
+			
+			System.out.println("Tecle enter para interromper o servidor!");
+			System.in.read();
+		} catch(Exception e){ 
+			e.printStackTrace();
+		} finally {
+			server.closeConnection();
+		}
+	}
+
+}

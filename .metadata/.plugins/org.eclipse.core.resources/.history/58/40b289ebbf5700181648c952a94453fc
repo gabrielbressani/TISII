@@ -1,0 +1,18 @@
+package upei.webserver;
+
+public class RunServer {
+
+	public static void main(String[] args) {
+		Server server = new Server();
+
+		try {
+			server.openConnection(80);
+			
+		} catch(Exception e){ 
+			e.printStackTrace();
+		}
+		
+		System.out.println("hello world");
+	}
+
+}

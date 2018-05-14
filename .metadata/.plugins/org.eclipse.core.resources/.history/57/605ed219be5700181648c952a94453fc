@@ -1,0 +1,8 @@
+package upei.webserver;
+
+public class Server {
+
+	public Server()	{
+		
+	}
+}

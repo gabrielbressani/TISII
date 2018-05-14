@@ -1,0 +1,16 @@
+package upei.webserver;
+
+import java.net.InetSocketAddress;
+
+import org.simpleframework.http.core.ContainerSocketProcessor;
+import org.simpleframework.transport.connect.SocketConnection;
+
+public class Server {
+	
+	public Server() {
+		Container container = new HTTPServer();
+		ContainerSocketProcessor servidor = new ContainerSocketProcessor(container);
+		SocketConnection conexao = new SocketConnection(servidor);
+		InetSocketAddress endereco = new InetSocketAddress(80);
+	}
+}

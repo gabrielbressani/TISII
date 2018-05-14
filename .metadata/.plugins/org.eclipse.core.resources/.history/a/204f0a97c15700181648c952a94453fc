@@ -1,0 +1,31 @@
+package upei.webserver;
+
+import java.net.InetSocketAddress;
+import java.net.SocketAddress;
+
+import org.simpleframework.http.core.Container;
+import org.simpleframework.http.core.ContainerSocketProcessor;
+import org.simpleframework.transport.connect.Connection;
+import org.simpleframework.transport.connect.SocketConnection;
+
+public class Server {
+	private Connection connection;
+	private ContainerSocketProcessor socket;
+	
+	public Server()	{
+	}
+	
+	public void openConnection(int port, Container routeConfigContainer) throws Exception {
+		this.socket = new ContainerSocketProcessor(routeConfigContainer);
+		this.connection = new SocketConnection(socket);
+		SocketAddress socketAddres = new InetSocketAddress(port);
+		
+		this.connection.connect(socketAddres);
+	}
+	
+	public void closeConnection() throws Exception {
+		this.connection.close();
+		this.socket.stop();
+	}
+	
+}

@@ -1,0 +1,26 @@
+package upei.webserver;
+
+import java.io.IOException;
+
+import org.simpleframework.http.core.Container;
+import org.simpleframework.http.core.ContainerSocketProcessor;
+import org.simpleframework.transport.connect.Connection;
+import org.simpleframework.transport.connect.SocketConnection;
+
+public class Server {
+	private Container routeConfig;
+	private Connection connection;
+	private ContainerSocketProcessor socket;
+	
+	public Server()	{
+		this.routeConfig = new RouteConfig();
+	}
+	
+	public void connect() throws Exception {
+		this socket = new ContainerSocketProcessor(this.routeConfig);
+		this.connection = new SocketConnection(socket);
+		SocketAddress socketAddres = new InetSocketAddress(porta);
+		conexao.connect(endereco);
+	}
+	
+}

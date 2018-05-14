@@ -1,0 +1,13 @@
+package upei.webserver;
+
+import java.io.IOException;
+
+import org.simpleframework.http.core.Container;
+import org.simpleframework.http.core.ContainerSocketProcessor;
+
+public class Server {
+	private Container routeConfig;
+	public Server()	{
+		Container routeConfig = new RouteConfig();
+	}
+}

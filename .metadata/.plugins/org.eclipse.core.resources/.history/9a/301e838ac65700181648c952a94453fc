@@ -1,0 +1,25 @@
+package upei.api;
+
+import java.io.PrintStream;
+
+import org.simpleframework.http.Request;
+import org.simpleframework.http.Response;
+
+public class SprintsAPI {
+	
+	public static void obterUltimaSprintAtiva(Request request, Response response) {
+		
+		try {
+			
+			PrintStream body = response.getPrintStream();
+			String hostName = "XPTO";
+			String x =  = "{\"nom\":\""+hostName+"\"}"
+			response.setValue("Content-Type", "application/json");
+			body.println("[nome: 'Diego']");
+			body.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+}
