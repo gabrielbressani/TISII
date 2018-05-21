@@ -1,0 +1,44 @@
+package upei.webserver;
+import upei.api.*;
+
+import java.util.concurrent.Callable;
+
+import org.simpleframework.http.Request;
+import org.simpleframework.http.Response;
+import org.simpleframework.http.core.Container;
+
+public class RouteConfig  implements Container {
+
+	private Request request;
+	private Response response;
+
+	
+	@Override
+	public void handle(Request request, Response response) {
+		this.request = request;
+		this.response = response;
+		
+		String path = request.getPath().getPath();
+		
+		if (path.startsWith("/adicionarProduto")) {
+			SprintsAPI sprintsAPI = new  SprintsAPI(this.request, this.response);
+			mapper(sprintsAPI.post, sprintsAPI.get);
+		}
+			
+					
+	}
+	
+	
+	public void mapper(Callable<Object> postMethod, Callable<Object> getMethod) throws Exception {
+		String method = request.getMethod();
+
+		if (method.equals(HTTPMethod.POST))
+			postMethod.call();
+		else
+			getMethod.call();
+	}
+}
+
+enum HTTPMethod {
+	GET, POST
+}

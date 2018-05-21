@@ -1,0 +1,14 @@
+package upei.database.mock;
+
+import java.util.LinkedList;
+import java.util.List;
+
+import upei.domain.*;
+
+public class SprintsMock {
+	private List<Sprint> sprints;
+	
+	public SprintsMock() {
+		sprints = new LinkedList<Sprint>();
+	}
+}

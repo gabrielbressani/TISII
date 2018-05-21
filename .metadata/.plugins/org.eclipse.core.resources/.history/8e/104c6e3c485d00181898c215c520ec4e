@@ -1,0 +1,21 @@
+package upei.api;
+import  upei.database.mock.*;
+import org.simpleframework.http.Request;
+import org.simpleframework.http.Response;
+
+public class SprintsAPI extends BaseAPI {
+	private SprintsMock mock;
+	
+	public SprintsAPI(Request request, Response response) {
+		super(request, response);
+		this.mock = new SprintsMock();
+	}
+
+	public void get() {
+		this.returnJson(this.mock.obterSprints());
+	}
+	
+	public void post() {
+		this.returnJson(this.mock.obterSprints());
+	}
+}

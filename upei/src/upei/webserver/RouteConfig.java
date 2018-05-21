@@ -15,26 +15,18 @@ public class RouteConfig  implements Container {
 		this.request = request;
 		this.response = response;
 		
-		makeUrlRouter();
-	}
-	
-	private void makeUrlRouter() {
-		String urlPath = request.getPath().toString();
-		
-		if(urlPath.contains("/api/sprint")) {
-			routerForSprintAPI(urlPath);
-		}
-	}
-	
-	private void  routerForSprintAPI(String urlPath) {
-		SprintsAPI sprintAPI = new SprintsAPI(request, response);
-		
-		switch(urlPath) {
-			case "/api/sprint/ultimaSprint":
-				sprintAPI.obterUltimaSprintAtiva();
-				break;
-		}
-		
-	}
+		String path = request.getPath().getPath();
 
+		if (path.startsWith("/api/sprint"))
+			mapper(new SprintsAPI(this.response));	
+	}
+	
+	public void mapper(IHTTPController controller) {
+		String httpMethod = request.getMethod();
+		
+		if (httpMethod.equals("POST"))
+			controller.post(request.getQuery());
+		else
+			controller.get();
+	}
 }

@@ -1,0 +1,5 @@
+package upei.database.mock;
+
+public class SprintsMock {
+
+}

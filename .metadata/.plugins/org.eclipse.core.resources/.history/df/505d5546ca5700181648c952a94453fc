@@ -1,0 +1,17 @@
+package upei.api;
+import  upei.domain.*;
+import org.simpleframework.http.Request;
+import org.simpleframework.http.Response;
+
+public class SprintsAPI extends BaseAPI {
+	
+	public SprintsAPI(Request request, Response response) {
+		super(request, response);
+	}
+
+	public void obterUltimaSprintAtiva() {
+		Sprint ultimaSprint = new Sprint("Sprint 05/02");
+		
+		this.returnJson(ultimaSprint);
+	}
+}

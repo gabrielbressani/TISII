@@ -1,25 +1,22 @@
 package upei.api;
+import  upei.database.mock.*;
 
-import org.simpleframework.http.Request;
+import org.simpleframework.http.Query;
 import org.simpleframework.http.Response;
 
-public class SprintsAPI extends BaseAPI {
+public class SprintsAPI extends BaseAPI{
+	private SprintsMock mock;
 	
-	public SprintsAPI(Request request, Response response) {
-		super(request, response);
+	public SprintsAPI(Response response) {
+		super(response);
+		this.mock = new SprintsMock();
 	}
 
-	public void obterUltimaSprintAtiva() {	
-		this.returnJson(new XPTO());
+	public void get() {
+		this.returnSuccessJson(this.mock.obterSprints());
 	}
-}
-
-class XPTO {
-	public String nome;
-	public int idade;
 	
-	public XPTO(){
-		this.nome = "Diego";
-		this.idade = 30;
+	public void post(Query query) {
+		this.returnSuccessJson(query);
 	}
 }

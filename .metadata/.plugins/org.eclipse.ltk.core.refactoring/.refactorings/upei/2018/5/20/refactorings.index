@@ -2,3 +2,6 @@
 1526333070052	Delete element
 1526333282546	Delete element
 1526336375937	Rename type 'SprintsApi'
+1526338389048	Encapsulate field 'Nome'
+1526338927546	Encapsulate field 'DataDeInicio'
+1526339198971	Encapsulate field 'DataDeFim'
