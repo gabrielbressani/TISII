@@ -1,0 +1,25 @@
+package upei.api;
+
+import org.simpleframework.http.Query;
+import org.simpleframework.http.Response;
+
+public class TasksControllerAPI extends BaseAPI {
+
+	public TasksControllerAPI(Response response) {
+		super(response);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void post(Query query) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void get() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

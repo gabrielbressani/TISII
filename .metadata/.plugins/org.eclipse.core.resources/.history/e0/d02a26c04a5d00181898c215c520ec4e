@@ -1,8 +1,0 @@
-package upei.webserver;
-
-import javax.management.Query;
-
-public interface IHTTPController {
-	void post(Query query);
-	void get();
-}

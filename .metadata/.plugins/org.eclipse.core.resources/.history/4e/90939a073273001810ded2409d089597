@@ -1,0 +1,61 @@
+package upei.database.mock;
+
+import java.time.LocalDate;
+import java.util.LinkedList;
+import java.util.List;
+import upei.domain.*;
+
+public class SprintsMock {
+	private static List<Sprint> sprints;
+	private static SprintsMock instance;
+	
+	public static SprintsMock getInstance() {
+		if (instance == null) {
+			instance = new SprintsMock();
+		}
+		
+		return instance;
+	}
+	
+	private SprintsMock() {
+		sprints = new LinkedList<Sprint>();
+		
+		sprints.add(this.criarSprintModelo());
+	}
+	
+	private Sprint criarSprintModelo() {
+		Sprint sprintModelo = new Sprint("Sprint 05/01", LocalDate.now(), LocalDate.now().plusDays(5));
+		
+		Child childModelo = new Child();
+		childModelo.setName("Junior");
+		childModelo.setXp(10);
+		
+		Task taskModelo1 = new Task();
+		taskModelo1.setName("Arrumar o Quarto");
+		taskModelo1.setDescription("Arrumar o quarto sem deixar a toalha em cima da cama");
+		taskModelo1.setSprint(sprintModelo);
+		taskModelo1.setChild(childModelo);
+		
+		Task taskModelo2 = new Task();
+		taskModelo2.setName("Fazer exercício de  casa");
+		taskModelo2.setDescription("");
+		taskModelo2.setSprint(sprintModelo);
+		taskModelo2.setChild(childModelo);
+		
+		
+		List<Task> tasks = new ArrayList<Task>();
+		
+		tasks.add(taskModelo1);
+		tasks.add(taskModelo2);
+		
+		sprintModelo.setTasks(tasks);
+	}
+	
+	public List<Sprint> obterSprints(){
+		return sprints;
+	}
+	
+	public void addSprint(Sprint sprint) {
+		sprints.add(sprint);
+	}
+}

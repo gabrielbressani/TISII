@@ -1,0 +1,31 @@
+package upei.api;
+import  upei.database.mock.*;
+import upei.domain.Sprint;
+
+import java.time.LocalDate;
+
+import org.simpleframework.http.Query;
+import org.simpleframework.http.Response;
+
+public class SprintsControllerAPI extends BaseAPI{
+	private SprintsMock mock;
+	
+	public SprintsControllerAPI(Response response) {
+		super(response);
+		this.mock = SprintsMock;
+	}
+
+	public void get() {
+		this.returnSuccessJson(this.mock.obterSprints());
+	}
+	
+	public void post(Query query) {
+		String sprintName = query.get("Nome");
+		
+		this.mock.addSprint(
+			new Sprint(sprintName, LocalDate.now(), LocalDate.now().plusDays(5))
+		);
+		
+		this.returnSuccessJson(this.mock.obterSprints());
+	}
+}

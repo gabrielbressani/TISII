@@ -1,0 +1,56 @@
+package upei.domain;
+
+public class Task {
+	private int Key;
+	private String nome;
+	private String descricao;
+	private String estado;
+	private int avaliacao;
+	private Parents responsavel;
+	private Child filhx;
+	
+	public Task(int id, String status, String name, String description, int rating) {
+		this.Key = id;
+		this.nome = name;
+		this.descricao = description;
+		this.avaliacao = rating;
+		this.estado = status;
+	}
+	
+	public String getName() {
+		return nome;
+	}
+	public void setName(String name) {
+		this.nome = name;
+	}
+	
+	public String getDescription() {
+		return descricao;
+	}
+	public void setDescription(String description) {
+		this.descricao = description;
+	}
+	
+	public int getRating() {
+		return avaliacao;
+	}
+	public void setRating(int rating) {
+		this.avaliacao = rating;
+	}
+
+	public int getId() {
+		return Key;
+	}
+
+	public void setId(int id) {
+		Key = id;
+	}
+
+	public String getStatus() {
+		return estado;
+	}
+
+	public void setStatus(String status) {
+		this.estado = status;
+	}
+}

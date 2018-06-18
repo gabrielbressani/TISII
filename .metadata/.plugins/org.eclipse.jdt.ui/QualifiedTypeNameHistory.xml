@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.concurrent.Callable"/>
+<fullyQualifiedTypeName name="upei.webserver.HTTPMethod"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Method"/>
+<fullyQualifiedTypeName name="org.omg.CORBA.portable.InvokeHandler"/>
+<fullyQualifiedTypeName name="org.simpleframework.http.Status"/>
+<fullyQualifiedTypeName name="upei.webserver.IHTTPController"/>
+<fullyQualifiedTypeName name="javax.management.Query"/>
+<fullyQualifiedTypeName name="upei.database.mock.SprintsMock"/>
+</qualifiedTypeNameHistroy>

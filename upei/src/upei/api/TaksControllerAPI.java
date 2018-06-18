@@ -1,0 +1,41 @@
+package upei.api;
+import  upei.database.mock.*;
+import upei.domain.Child;
+import upei.domain.Parents;
+import upei.domain.Sprint;
+import upei.domain.Task;
+
+import org.simpleframework.http.Query;
+import org.simpleframework.http.Response;
+
+public class TaksControllerAPI extends BaseAPI{
+	private SprintsMock mock;
+	
+	public TaksControllerAPI(Response response) {
+		super(response);
+		this.mock = SprintsMock.getInstance();
+	}
+
+	public void get() {
+		this.returnSuccessJson(this.mock.obterSprints());
+	}
+	
+	public void post(Query query) {
+		int sprintKey = Integer.parseInt(query.get("SprintKey"));
+		
+		int id = Integer.parseInt(query.get("TaskKey"));
+		String status = query.get("Status");
+		String name = query.get("Name"); 
+		String description = query.get("Description");  
+		int rating = Integer.parseInt(query.get("Rating"));
+		Parents responsavel = new Parents(query.get("ParentName"));
+		Child filhx = new Child(query.get("ChildName"), Integer.parseInt(query.get("xp")));
+		
+		Sprint sprint = SprintsMock.getByKey(sprintKey);
+		Task task = new Task(id, status, name, description, rating, responsavel, filhx);
+		
+		sprint.addTasks(task);
+		
+		this.returnSuccessJson(this.mock.obterSprints());
+	}
+}

@@ -1,8 +1,0 @@
-package upei.api;
-
-public class BaseAPI {
-
-	protected void ReturnJson(){
-		
-	}
-}

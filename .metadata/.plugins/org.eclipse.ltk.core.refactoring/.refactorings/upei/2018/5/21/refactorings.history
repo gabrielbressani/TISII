@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;upei.api.SprintsAPI&apos; to &apos;SprintsControllerAPI&apos;&#x0A;- Original project: &apos;upei&apos;&#x0A;- Original element: &apos;upei.api.SprintsAPI&apos;&#x0A;- Renamed element: &apos;upei.api.SprintsControllerAPI&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;SprintsAPI&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;upei.api{SprintsAPI.java[SprintsAPI" matchStrategy="1" name="SprintsControllerAPI" qualified="false" references="true" similarDeclarations="false" stamp="1526944564796" textual="false" version="1.0"/>
+</session>

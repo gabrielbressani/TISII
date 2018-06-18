@@ -1,0 +1,37 @@
+package upei.domain;
+
+import java.util.List;
+
+public class Child {
+	private String Name;
+	private int Xp;
+	private String Photo;
+	
+	public String getName() {
+		return Name;
+	}
+	public void setName(String name) {
+		Name = name;
+	}
+	
+	public int getXp() {
+		return Xp;
+	}
+	public void setXp(int xp) {
+		Xp = xp;
+	}
+
+	public String getPhoto() {
+		return Photo;
+	}
+	public void setPhoto(String photo) {
+		Photo = photo;
+	}
+	
+	public List<Task> getTasks() {
+		return Tasks;
+	}
+	public void setTasks(List<Task> tasks) {
+		Tasks = tasks;
+	}
+}

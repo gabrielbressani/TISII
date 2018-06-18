@@ -1,0 +1,26 @@
+package upei.api;
+
+import org.simpleframework.http.Query;
+import org.simpleframework.http.Response;
+
+import upei.database.mock.SprintsMock;
+
+public class TasksControllerAPI extends BaseAPI {
+	private SprintsMock mock;
+	
+	public TasksControllerAPI(Response response) {
+		super(response);
+		this.mock = SprintsMock.getInstance();
+	}
+
+	@Override
+	public void post(Query query) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void get() {
+		this.returnSuccessJson(this.mock.obterSprints());
+	}
+
+}

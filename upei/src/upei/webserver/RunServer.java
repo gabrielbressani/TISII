@@ -7,7 +7,7 @@ public class RunServer {
 		Server server = new Server(routeConfig);
 
 		try {
-			server.openConnection(8002);
+			server.openConnection(8000);
 			
 			System.out.println("Tecle enter para interromper o servidor!");
 			System.in.read();

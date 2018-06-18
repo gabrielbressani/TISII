@@ -1,0 +1,32 @@
+package upei.api;
+import  upei.database.mock.*;
+import upei.domain.Sprint;
+
+import java.time.LocalDate;
+
+import org.simpleframework.http.Query;
+import org.simpleframework.http.Response;
+
+public class TaksControllerAPI extends BaseAPI{
+	private SprintsMock mock;
+	
+	public TaksControllerAPI(Response response) {
+		super(response);
+		this.mock = SprintsMock.getInstance();
+	}
+
+	public void get() {
+		this.returnSuccessJson(this.mock.obterSprints());
+	}
+	
+	public void post(Query query) {
+		int sprintKey = Integer.parseInt(query.get("Key"));
+		String sprintName = query.get("Nome");
+		
+		Sprint sprint = new Sprint(sprintKey, sprintName, "Desativada", LocalDate.now(), LocalDate.now().plusDays(5));
+		
+		this.mock.addSprint(sprint);
+		
+		this.returnSuccessJson(this.mock.obterSprints());
+	}
+}

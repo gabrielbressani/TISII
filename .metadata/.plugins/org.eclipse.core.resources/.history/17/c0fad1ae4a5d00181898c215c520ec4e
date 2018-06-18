@@ -1,6 +1,0 @@
-package upei.webserver;
-
-public interface IHTTPController {
-	void post(Query query);
-	void get();
-}

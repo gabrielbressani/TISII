@@ -18,7 +18,9 @@ public class RouteConfig  implements Container {
 		String path = request.getPath().getPath();
 
 		if (path.startsWith("/api/sprint"))
-			mapper(new SprintsAPI(this.response));	
+			mapper(new SprintsControllerAPI(this.response));
+		else if (path.startsWith("/api/task"))
+			mapper(new TaksControllerAPI(this.response));
 	}
 	
 	public void mapper(IHTTPController controller) {
